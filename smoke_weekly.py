@@ -21,6 +21,7 @@ for file in glob.glob(path):
         df = pd.read_excel(open(file, 'rb'), sheetname=0)
         print(df.iloc[9,6])
 
+#Dasd
 
 print(directories)
 print(cl)
