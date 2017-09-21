@@ -1,17 +1,14 @@
 import os
 import matplotlib
 #basic input
-start = input("Please input the first Changelist to be processed. ")
-end = input("Please input the last Changelist to be processed. ")
+start = 444437
+#input("Please input the first Changelist to be processed. ")
+end = 454777
+#input("Please input the last Changelist to be processed. ")
 
-directory = os.fsencode("C:/Area")
+direct = "C:/Area/"
 
-for file in os.listdir(directory):
-    filename = os.fsdecode(file)
-    if filename.endswith(".csv"):
-        time = os.path.getctime(directory + file)
-        print(time)
-        print(filename)
-        continue
-    else:
-        continue
+for directory in os.listdir(direct):
+    dirname = os.fsdecode(directory)
+    if os.path.isdir(int(dirname) >= start and int(dirname) <= end):
+        print(directory)
