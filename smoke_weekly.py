@@ -1,6 +1,6 @@
 import os
 import matplotlib
-
+#basic input
 start = input("Please input the first Changelist to be processed. ")
 end = input("Please input the last Changelist to be processed. ")
 
