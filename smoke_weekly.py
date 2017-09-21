@@ -1,4 +1,5 @@
 import os, glob
+import pandas as pd
 import matplotlib
 #basic input
 """
@@ -13,10 +14,13 @@ directories = []
 for file in glob.glob(path):
     dirname = os.fsdecode(directory)
     if (int(file[8:14:]) >= int(start) and int(file[8:14:]) <= int(end)):
-        print(file)
+        #print(file)
         directories.append(file)
-        print(file[8:14:])
+        #print(file[8:14:])
         cl.append(int(file[8:14:]))
+        df = pd.read_excel(open(file, 'rb'), sheetname=0)
+        print(df.iloc[9,6])
+
 
 print(directories)
 print(cl)
