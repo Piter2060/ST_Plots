@@ -55,8 +55,8 @@ def resPlotter():
     plt.title('Weekly Smoke Report')
     plt.xticks(ind, (cl))
     plt.yticks(np.arange(0, 10, 1))
-    plt.legend((p1[0], p3[0], p2[0], p4[0]), ('Pass', 'Issues', 'Fail', 'Blocked'), loc= 'lower center', bbox_to_anchor=(0.5, 0.01),
-          ncol=4, fancybox=True, shadow=True)
+    plt.legend((p1[0], p3[0], p2[0], p4[0]), ('Pass', 'Issues', 'Fail', 'Blocked'), loc= 'lower center',
+    bbox_to_anchor=(0.5, 0.01), ncol=4, fancybox=True, shadow=True)
     
     plt.show()
     
