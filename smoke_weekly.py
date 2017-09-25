@@ -20,7 +20,6 @@ Blocked = []
 
 def resultSearch():
     for file in glob.glob(path):
-        dirname = os.fsdecode(directory)
         if (int(file[8:14:]) >= int(start) and int(file[8:14:]) <= int(end)):
             directories.append(file)
             cl.append(int(file[8:14:]))
