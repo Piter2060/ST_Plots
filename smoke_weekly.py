@@ -45,16 +45,19 @@ def resPlotter():
     ind = np.arange(N)  # the x locations for the groups
     width = 0.35  # the width of the bars: can also be len(x) sequence
     
-    p1 = plt.bar(ind, Pass, width, color='green')
-    p2 = plt.bar(ind, Fail, width, color='red', bottom = Pass)
-    p3 = plt.bar(ind, Issues, width, color='yellow', bottom = Pass + Fail)
-    p4 = plt.bar(ind, Blocked, width, color='black', bottom = Pass + Fail + Issues)
+    p1 = plt.bar(ind, Pass, width, color='olivedrab')
+    p3 = plt.bar(ind, Issues, width, color='gold', bottom=Pass)
+    p2 = plt.bar(ind, Fail, width, color='firebrick', bottom = Pass + Issues)
+    p4 = plt.bar(ind, Blocked, width, color='black', bottom=Pass + Issues + Fail)
+    
+
     
     plt.ylabel('Results')
     plt.title('Weekly Smoke Report')
     plt.xticks(ind, (cl))
-    plt.yticks(np.arange(0, 11, 1))
-    plt.legend((p1[0], p2[0], p3[0], p4[0]), ('Pass', 'Fail', 'Issues', 'Blocked'))
+    plt.yticks(np.arange(0, 10, 1))
+    plt.legend((p1[0], p3[0], p2[0], p4[0]), ('Pass', 'Issues', 'Fail', 'Blocked'), loc= 'lower center', bbox_to_anchor=(0.5, 0.01),
+          ncol=4, fancybox=True, shadow=True)
     
     plt.show()
     
