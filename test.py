@@ -55,7 +55,7 @@ avg_AMD = []
 avg_Intel = []
 avg_Geforce = []
 avg_Radeon = []
-avg_RAM = []
+avg_Ram = []
 avg_uptime = []
 
 def resultSearch():
@@ -69,11 +69,11 @@ def resultSearch():
             Fail.append(df.iloc[4, 7])
             Issues.append(df.iloc[5, 7])
             Blocked.append(df.iloc[6, 7])
-            avg_AMD.append(df.iloc[5, 2])
-            avg_Intel.append(df.iloc[6, 2])
+            avg_AMD.append(float(df.iloc[5, 2]) * 100)
+            avg_Intel.append(float(df.iloc[6, 2]) * 100)
             avg_Geforce.append(df.iloc[7, 2])
             avg_Radeon.append(df.iloc[8, 2])
-            avg_RAM.append(df.iloc[9, 2])
+            avg_Ram.append(df.iloc[9, 2])
             avg_uptime.append(df.iloc[10, 2])
             print(avg_AMD)
             print("AMD")
@@ -93,6 +93,7 @@ def resPlotter():
     Intel = np.array(avg_Intel)
     Geforce = np.array(avg_Geforce)
     Radeon = np.array(avg_Radeon)
+    Ram = np.array(avg_Ram)
     N = len(cl)
     ind = np.arange(N)  # the x locations for the groups
     width = 0.35  # the width of the bars: can also be len(x) sequence
@@ -113,7 +114,7 @@ def resPlotter():
 
     bar_width = 0.4
     plt.ylabel('Results')
-    plt.title('Performance Smoke: average CPU usage')
+    plt.title('Performance Smoke: average CPU usage (in %)')
     bar_locations = np.arange(len(cl))
     plt.xticks(ind, (cl))
     p1 = plt.bar(bar_locations, AMD, bar_width, color = "tomato")
@@ -130,6 +131,12 @@ def resPlotter():
     plt.legend((p1[0], p2[0]), ("CPU Radeon", "CPU Geforce"))
     plt.show()
 
+    plt.ylabel('Results')
+    plt.title('Performance Smoke: average RAM usage')
+    bar_locations = np.arange(len(cl))
+    plt.xticks(ind, (cl))
+    p1 = plt.bar(bar_locations, Ram, bar_width, color="tomato")
+    plt.show()
 
 
 resultSearch()

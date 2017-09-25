@@ -55,7 +55,7 @@ avg_AMD = []
 avg_Intel = []
 avg_Geforce = []
 avg_Radeon = []
-avg_RAM = []
+avg_Ram = []
 avg_uptime = []
 
 
@@ -74,7 +74,7 @@ def resultSearch():
             avg_Intel.append(df.iloc[6, 2])
             avg_Geforce.append(df.iloc[7, 2])
             avg_Radeon.append(df.iloc[8, 2])
-            avg_RAM.append(df.iloc[9, 2])
+            avg_Ram.append(df.iloc[9, 2])
             avg_uptime.append(df.iloc[10, 2])
             print(avg_AMD)
             print("AMD")
